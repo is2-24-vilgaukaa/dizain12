@@ -1,0 +1,227 @@
+/*CSS-переменные*/
+:root {
+--colorGreen: #8FCB9B;
+--colorWhite: #eae6e5;
+--colorBrown: #8F8073;
+--colorGreenBut: #5cd774;
+--font: 'El Messiri', sans-serif;
+}
+
+/*фон*/
+body {
+background-color: var(--colorGreen);
+overflow-x: hidden;
+}
+
+/*шрифт*/
+h1, h2, h3, h4, h5 {
+font-family: var(--font);
+color: var(--colorWhite);
+text-align: center;
+}
+
+/*шрифт*/
+p, span {
+font-family: var(--font);
+color: var(--colorWhite);
+font-size: 20px;
+}
+
+/*выравнивание по центру*/
+.center {
+text-align: center;
+}
+
+/*фон для инфо-ого блока с кнопкой (ква)*/
+.color_div {
+background-color: rgba(51, 51, 51, 0.301);
+}
+
+/*меню с использованием CSS transition*/
+.menu {
+width: 400px;
+height: 30px;
+text-align: center;
+margin-bottom: 20px;
+background: var(--colorBrown);
+-webkit-transition: width 2s; 
+transition: width 2s;
+}
+
+/*стиль для ссылок в меню*/
+.menu a {
+text-decoration: none;
+font-family: var(--font);
+}
+
+/*использование псевдокласса*/
+.menu:hover {
+width: 100%;
+}
+
+/*стиль для горизонтальной линии*/
+hr {
+margin: 0px;
+padding: 0;
+height: 0;
+border: none;
+border-width: 0 0 5px;
+border-style: solid;
+box-sizing: border-box;
+color: var(--colorBrown);
+}
+
+/*изображение над кнопкой*/
+.Frog {
+width: 300px;
+height: 300px;
+margin: 10px;
+border-radius: 20px;
+}
+
+/*стиль для кнопки квакнуть*/
+.square {
+width: 500px;
+height: 40px;
+background: var(--colorGreenBut);
+font-family: var(--font);
+font-size: 20px;
+margin: 10px;
+border-radius: 10px;
+border-color: var(--colorWhite);
+color: var(--colorWhite);
+}
+
+/*использование псевдокласса*/
+.square:hover {
+animation: changeSquareColor 3s infinite ease;
+}
+
+/*смена цвета кнопки*/
+@keyframes changeSquareColor {
+0% { background: var(--colorGreenBut); }
+100% { background: var(--colorBrown); }
+}
+
+/*таблица*/
+.TableFrog {
+width: 100%;
+}
+
+/*картинки в таблице*/
+.TableFrog img {
+width: 400px;
+height: 300px;
+margin: 10px;
+border-radius: 20px;    
+}
+
+/*выплывающий заголовок*/
+.box {
+width: 99%;
+height: 100px;
+background: var(--colorBrown);
+margin: 10px;
+display: grid;
+place-content: center;
+color: var(--colorWhite);
+font-size: 30px;
+text-align: center;
+font-family: var(--font);
+}
+
+.box {
+animation: slide-in 1000ms;
+}
+
+/*появление заголовка*/
+@keyframes slide-in {
+from {transform: translateX(-100%);}
+to {transform: translateX(0%);}
+}
+
+/*размер картинки (прыжок)*/
+.frogjamp img {
+width: 400px;
+height: 400px;
+border-radius: 20px;
+margin: 20px;
+}
+
+/*перемещение выбранной картинки*/
+/*если выбрали 1-ую*/
+.c1:checked ~.frog1{
+animation-name: jump;
+animation-duration: 1.5s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+/*если выбрали 2-ую*/
+.c2:checked ~.frog2{
+animation-name: jump;
+animation-duration: 1.5s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+/*если выбрали 3-ью*/
+.c3:checked ~.frog3{
+animation-name: jump;
+animation-duration: 1.5s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+
+/*перемещение картинки/прыжок*/
+@keyframes jump {
+100%{transform: translate(1700px, -170px)}
+}
+
+/*стиль для блока с анекдотом*/
+.animate-pulse {
+height: 72px;
+line-height: 72px;
+background: var(--colorBrown);
+border-radius: 20px;
+font-weight: bold;
+font-size: 20px;
+padding: 20px;
+text-align: center;
+color: #FFFFFF;
+animation: animate_pulse 1.5s infinite;
+font-family: var(--font);
+}
+ 
+.animate-pulse:hover {
+animation: none;
+}
+ 
+/*эффект пульсации*/
+@keyframes animate_pulse {
+0% {box-shadow: 0 0 0 0 rgba(228, 25, 49, 0.4);}
+70% {box-shadow: 0 0 0 10px rgba(228, 25, 49, 0);}
+100% {box-shadow: 0 0 0 0 rgba(228, 25, 49, 0);}
+}
+
+/*контейнер для увеличения картинки в подвале*/
+.box2 {
+animation: grow-and-shrink 3000ms;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+width: 100%;
+height: 50px; 
+}
+
+/*стиль для изображения в подвале*/
+.gif {
+margin: 20px;
+border-radius: 20px;
+width: 400px;
+height: 400px; 
+}
+
+/*увеличение изображения*/
+@keyframes grow-and-shrink {
+0% {transform: scale(1);}
+100% {transform: scale(1.2);}
+}
